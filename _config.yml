@@ -28,7 +28,7 @@ twitter_username: /
 github_username:  RhiadC
 
 # Build settings
-theme: jekyll-theme-minimal
+theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
 
