@@ -17,4 +17,4 @@ buttonContainer.addEventListener('click', event=>{
 {% endhighlight %}<br /><br />
 No código acima, ao clicarmos num elemento do tipo `button`,  conseguimos acesso a sua propriedade. Neste caso, podemos realizar diversas operações com este elemento.
 Esse esquema pode ser usado de maneira similar para qualquer elemento `child` contido num `parent` com diversos outros elementos semelhantes, evitando assim a declaração de diversas constantes para cada elemento.<br/>
-No codigo acima,  ao clicarmos em qualquer lugar do "buttonContainer", o console exibiria a mensagem "evento click", mas a condicional so sera satisfeita se o atributo nodeName do target for do tipo "BUTTON".
+No codigo acima,  ao clicarmos em qualquer lugar do `buttonContainer`, o console exibiria a mensagem "evento click", mas a condicional só sera satisfeita se o atributo `nodeName` do target for do tipo `BUTTON`.
