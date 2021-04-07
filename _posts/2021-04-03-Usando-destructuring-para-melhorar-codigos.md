@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Usando  destructuring para melhorar codigos"
+title:  "Usando destructuring para melhorar codigos"
 date:   2021-04-03 23:24:45 -0300
-categories: jekyll update
+categories: Javascript Refactoring
 ---
 
 Tome o seguinte pedaço de código: <br />

@@ -2,7 +2,7 @@
 layout: post
 title:  "Usando o localStorage para armazenamento de dados não sensíveis no Javascript"
 date:   2021-04-02 23:24:45 -0300
-categories: jekyll update
+categories: Javascript
 ---
 
 A API Web Storage é muito interessante no armazenamento de dados não sensíveis. Apresenta 2 propriedades: o `sessionStorage`, que armazena dados gravados até o termino da sessão do usuário, e o `localStorage`

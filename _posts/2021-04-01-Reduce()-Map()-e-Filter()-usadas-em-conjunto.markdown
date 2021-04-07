@@ -2,7 +2,7 @@
 layout: post
 title:  "Eficiência usando funções de programação funcional como reduce() e map() "
 date:   2021-04-01 23:24:45 -0300
-categories: jekyll update
+categories: Javascript 
 ---
 
 Embora a `map()` e a `reduce()` possam ser utilizadas com o mesmo proposito em algumas situações, é importante verificarmos em qual situação cada função se mostra mais eficiênte
