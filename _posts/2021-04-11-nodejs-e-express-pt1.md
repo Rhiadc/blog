@@ -86,7 +86,7 @@ router.use(timeLog = (req, res, next) =>{
 })
 
 router.get('/about', (req, res)=>{
-    res.semd('about surf')
+    res.send('about surf')
 })
 
 //exportando o módulo
