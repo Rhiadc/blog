@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Contribuindo para um projeto open source. Primeiros passsos"
+title:  "Contribuindo para um projeto open source. Primeiros passos"
 date:   2021-04-16 23:24:45 -0300
 categories:  Github
 ---
