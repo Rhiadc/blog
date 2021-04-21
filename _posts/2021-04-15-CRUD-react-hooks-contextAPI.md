@@ -81,15 +81,10 @@ const AppReducer = (state, action) =>{
             } 
 
         case 'UPDATE_USER':
-            const updateUSers = state.users.map(item=>{
-                if(item.id === action.payload.id){
-                    return action.payload
-                }
-                return item
-            }) 
-
             return{
-                users: updateUsers
+                users: state.users.map(item=>{ item.id === action.payload.id ?
+                    action.payload : item
+                })
             }   
 
         default:
