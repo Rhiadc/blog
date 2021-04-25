@@ -5,16 +5,17 @@ date:   2021-04-24 23:24:45 -0300
 categories: Javascript 
 ---
 
-De modo similar aos métodos `map` e `filter`, o `reduce` também é uma high order function que recebe uma função por argumento e executa essa função para cada item do array. Usamos o `reduce` quando precisamo reduzir o array a um tipo de dado, como um objeto literal, uma string, um número ou até mesmo um outro array. Ao contrário do `map` e `filter`, o `reduce` tem poder de gerar um output diferente de um array<br/>
+De modo similar aos métodos `map` e `filter`, o `reduce` também é uma high order function que recebe uma função por argumento e executa essa função para cada item do array. Usamos o `reduce` quando precisamos reduzir o array a um tipo de dado, como um objeto literal, uma string, um número ou até mesmo um outro array. Ao contrário do `map` e `filter`, o `reduce` tem poder de gerar um output diferente de um array<br/>
+Exemplo simples de funcionamento do reduce:
 
 {% highlight javascript %}
-Exemplo simples de funcionamento do reduce:
+
 
 const number = [1,2,3]
 const sum = numbers.reduce((accumulator, item)=> accumulator + item , 0)
 {% endhighlight %}
 
-Na função acima, `accumulator` parte de 0 e tem a ele somado o primeiro item do array (1), na proxima execução da função, `accumulator` (que agora é 1) é somado com 2, e na proxima execução, somado com 3... Ou seja, o parâmetro retornado pela função é armazenado em 
+Na função acima, `accumulator` parte de 0 e tem a ele somado o primeiro item do array (1). Na proxima execução da função, `accumulator` (que agora é 1) é somado com 2, e na proxima execução, somado com 3... Ou seja, o parâmetro retornado pela função é armazenado em 
 `accumulator` a cada iteração.<br/><br/>
 
 Outro exemplo de caso em que podemos usar o reduce:
