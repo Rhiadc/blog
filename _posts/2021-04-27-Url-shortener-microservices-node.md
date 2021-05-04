@@ -108,5 +108,5 @@ app.listen(port, ()=>{
 })
 {% endhighlight %}<br/><br/>
 
-E é isso, o core do projeto é esse, ele pode ser manipulado de diversas formas. Podemos criar um REGEX para validar a entrada do usuário (entradas do tipo "http://" ou "https://"), também podemos utilizar o `dns.lookup` do módulo padrão `dns`do Node para validarmos a URL.
+E é isso, o core do projeto é esse, ele pode ser manipulado de diversas formas. Podemos criar um REGEX para validarmos a entrada do usuário (entradas do tipo "http://" ou "https://"), também podemos utilizar o `dns.lookup` do módulo padrão `dns`do Node para validarmos a URL.
 Podemos também integrar facilmente uma interface, basta criarmos uma view html (ou qualquer outro tipo) e criarmos um arquivo Javascript para lidarmos com as requisições.

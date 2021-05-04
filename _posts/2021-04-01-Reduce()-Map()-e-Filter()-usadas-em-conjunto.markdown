@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Eficiência usando funções de programação funcional como reduce() e map() "
+title:  "Eficiência usando funções de programação funcional como reduce e map "
 date:   2021-04-01 23:24:45 -0300
 categories: Javascript 
 ---
 
-Embora a `map()` e a `reduce()` possam ser utilizadas com o mesmo proposito em algumas situações, é importante verificarmos em qual situação cada função se mostra mais eficiênte
+Embora a `map` e a `reduce` possam ser utilizadas com o mesmo proposito em algumas situações, é importante verificarmos em qual situação cada função se mostra mais eficiênte
 
-Enquanto o `map()` invoca uma função callback passada por argumento para cada elemento do Array e devolve um novo Array como resultado, o `reduce()` devolve um valor decorrente do array, posterior à aplicação da função callback.<br /><br />
+Enquanto o `map` invoca uma função callback passada por argumento para cada elemento do Array e devolve um novo Array como resultado, o `reduce` devolve um valor decorrente do array, posterior à aplicação da função callback.<br /><br />
 
 ### Usando o map() 
 Vejamos um exemplo, neste caso, queremos obter uma string de elementos HTML para inserirmos no nosso DOM. Seja o array:
