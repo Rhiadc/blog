@@ -2,7 +2,7 @@
 layout: post
 title:  "CORS, o que é e como lidar no back end de sua aplicação"
 date:   2021-05-03 19:24:45 -0300
-categories:  Nodejs Express 
+categories:  Nodejs Express API
 ---
 
 ![consolelog](https://res.cloudinary.com/practicaldev/image/fetch/s--VVoC_7gM--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/jdk4zort0fmt2vcdjil0.png)<br/><br/>
