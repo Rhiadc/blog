@@ -10,7 +10,7 @@ Existem 5 passos num fluxo TDD: <br/>
  - Traduzir um requerimento escrevendo um unit test, se estiver usando um setup hot reloading, os testes vão falhar, visto que o código prioritário ainda não está implementado.
  - Escrever e implementar o código que satisfaz os requerimentos. Rodar os testes, eles devem passar. Se falharem, repetir o passo.
  - Limpar o código fazendo um refactor.
- - Aperfeiçoar.
+ - Aperfeiçoar o código.
 
  <img src='https://developer.ibm.com/developer/default/articles/5-steps-of-test-driven-development/images/tdd-red-green-refactoring-v3.png' >
 <br/>
