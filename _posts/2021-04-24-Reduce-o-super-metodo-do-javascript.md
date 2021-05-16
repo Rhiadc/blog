@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Reduce - O super método do Javascript (e como usá-lo ao seu favor)"
+title:  "Reduce - O super método do Javascript (e como usá-lo a seu favor)"
 date:   2021-04-24 23:24:45 -0300
 categories: Javascript 
 ---
