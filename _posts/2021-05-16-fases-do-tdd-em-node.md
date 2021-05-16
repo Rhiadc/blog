@@ -33,8 +33,8 @@ Como estamos usando Node, as libs:
 
 ### Decidindo quando escrever testes de unidade
 Geralmente, existem dois casos onde queremos escrever os testes de unidade: <br/>
-<strong>Caso A: </strong>escrevemos um teste de unidade para representar uma funcionalidade concisa na nossa aplicação. Exemplo: uma funcionalide que retorna o numero de criptomoedas listados por determinada exchange. A primeira coisa a se fazer é escrever um unit test que falha, e depois escrever/mudar o nosso código até que ele passe nos testes. <br/>
-<strong>Caso B: </strong> um pedaço de código em prod quebra, o bug apresentado nesse código altera alguma funcionalidade da aplicação. Nesse caso, implementamos um teste de unidade e reescrevemos nossa funcionalidade até ela funcionar corretamente. Nesse caso teremos dois benefícios de implementar o unit test, a reusabilidade do teste e a correção do bug.
+<strong>Caso 1: </strong>escrevemos um teste de unidade para representar uma funcionalidade concisa na nossa aplicação. Exemplo: uma funcionalide que retorna o numero de criptomoedas listados por determinada exchange. A primeira coisa a se fazer é escrever um unit test que falha, e depois escrever/mudar o nosso código até que ele passe nos testes. <br/>
+<strong>Caso 2: </strong> um pedaço de código em prod quebra, o bug apresentado nesse código altera alguma funcionalidade da aplicação. Nesse caso, implementamos um teste de unidade e reescrevemos nossa funcionalidade até ela funcionar corretamente. Nesse caso teremos dois benefícios de implementar o unit test, a reusabilidade do teste e a correção do bug.
 
 ### Conclusão
 É essencial usarmos TDD nas nossas aplicações. TDD, embora aparentemente mais custoso de implementar no começo (aparentemente, pois evitar retestes ao implementar novas funcionalidades evita também muito tempo perdido) nos garante um código melhor, mais reutilizável e de mais fácil manutenção.
