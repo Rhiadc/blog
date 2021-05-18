@@ -18,7 +18,7 @@ Existem 5 passos num fluxo TDD: <br/>
 O workflow acima é o conhecido RGR, ou Red-Green-Refactor, e suas fases significam:
  - <strong>Vermelho</strong>: Código não funciona.
  - <strong>Verde</strong>: Tudo funcionando, mas necessário otimizar.
- - <strong>Azul</strong>: Tudo ok, podemos aplicar refatoramento e melhorar nosso código.
+ - <strong>Azul (Refactor)</strong>: Tudo ok, podemos aplicar refatoramento e melhorar nosso código.
 <br/>
 
 Unit tests também são parte integral do CI/CD e fazem parte do deployment pipeline, se os testes passarem, a integração e deploy acontecerá. <br/><br/>
