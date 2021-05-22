@@ -110,7 +110,7 @@ Assim que você configurar seu controller, importe no começo do server. A class
 Outra função legal dessa lib, é que não precisamos usar o  objeto `express.Router()`. 
 {% highlight javascript %}
 import * as bodyParser from 'body-parser'
-import { Server } frin '@overnightjs/core'
+import { Server } from '@overnightjs/core'
 import { UserController } from './UserController'
 import { LoginController } from './LoginController'
 
