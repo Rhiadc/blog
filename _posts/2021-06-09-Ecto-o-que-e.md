@@ -74,3 +74,4 @@ name == 1
     - Changeset
     - Query
 
+Fim da parte 1, na proxima parte falarei mais sobre Schema, mapeação da fonte de dados, e ecto changeset(validações).
