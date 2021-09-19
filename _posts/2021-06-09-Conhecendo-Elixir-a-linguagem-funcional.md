@@ -4,7 +4,7 @@ title:  "Elixir: conhecendo a linguagem de programação funcional"
 date:   2021-06-09 01:24:45 -0300
 categories:  Elixir
 ---
-<img src='http://www.each.usp.br/petsi/jornal/wp-content/uploads/2018/09/elixir.png'>
+<img src='https://structy.io/blog/elixir-lang.png'>
 >Elixir é uma linguagem dinâmica e funcional, projetada para construir aplicações escaláveis e de fácil manutenção.
 
 <br/>
