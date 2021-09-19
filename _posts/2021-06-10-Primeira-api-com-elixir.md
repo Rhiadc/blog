@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Primeira API com Elixir e Phoenix"
+title:  "Conhecendo Phoenix: primeira API"
 date:   2021-06-10 01:24:45 -0300
 categories:  Ecto Elixir Phoenix
 ---
