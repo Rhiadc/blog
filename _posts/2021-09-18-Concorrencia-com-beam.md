@@ -21,7 +21,7 @@ Num server típico, temos que lidar com requests simultâneos, manter um estado 
 
 <br/><br/>
 
-O scheduler é responsável pela alternância entre processos Erlang (corotinas). Cada processo tem um timeslot, depois que esse tempo acaba, ele é interrompido preemptivamente (multitask preemptivo); Processos são leves (2kb de alocamento), levando poucos microssegundos para serem criados. Seus footprints de memoria têm apenas alguns kbs (enquanto processos reais de sistema operacional usam alguns mbs apenas para stack). O número máximo de processos que teoricamente podem ser criados pela VM BEAM é de 134kk. <br/><br/>
+O scheduler é responsável pela alternância entre processos Erlang (corotinas). Cada processo tem um timeslot, depois que esse tempo acaba, ele é interrompido preemptivamente (multitask preemptivo); Processos são leves (2KB de alocamento), levando poucos microssegundos para serem criados. Seus footprints de memoria têm apenas alguns KBs (enquanto processos reais de sistema operacional usam alguns mbs apenas para stack). O número máximo de processos que teoricamente podem ser criados pela VM BEAM é de 134kk. <br/><br/>
 
 
 ### Caracteristicas
