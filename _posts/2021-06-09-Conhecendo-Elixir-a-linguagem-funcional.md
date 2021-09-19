@@ -34,22 +34,4 @@ categories:  Elixir
 
 O mix é o gerenciados de projetos, tasks e dependências oficial da linguagem. Apesar de ser nova, a linguagem conta com várias bibliotecas open-source, e aumenta a cada dia. Praticamente tudo o que precisamos, podemos achar no Package Manager oficial.<br/><br/>
 
-Conhecendo alguns comandos do Mix: <br/><br/>
-Busca as dependências definidas no projeto.
-{% highlight shell %}
-mix deps.get
-{% endhighlight %} <br/> 
-Cria um novo projeto.
-{% highlight shell %}
-mix new example
-{% endhighlight %} <br/> 
-Roda os testes da nossa aplicação (a comunidade Elixir também se preocupa com testes).
-{% highlight shell %}
-mix  text
-{% endhighlight %} <br/> 
-Novo projeto como framework Phoenix.
-{% highlight shell %}
-mix phoenix.new
-{% endhighlight %} <br/> 
-
 
