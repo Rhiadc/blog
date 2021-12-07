@@ -6,11 +6,11 @@ categories: Go Golang
 ---
 
 
-Trabalhar com Go, inevitavelmente acaba nos retornando às ideias de arquitetura limpa pregadas pelo Uncle Bob. Conceito esse que, de maneira geral, consiste em separar seu software em camadas, criando um sistema intrinsecamente testável e que, caso alguma camada desse sistema se torne obsoleta, como por exemplo, uma database, ela seja facilmente substituida por outra, dando o mínimo de trabalho possível. 
+Trabalhar com Go inevitavelmente acaba nos retornando às ideias de arquitetura limpa pregadas pelo Uncle Bob. Conceito esse que, de maneira geral, consiste em separar seu software em camadas, criando um sistema intrinsecamente testável e que, caso alguma camada desse sistema se torne obsoleta, como por exemplo, uma database, ela seja facilmente substituida por outra, dando o mínimo de trabalho possível. 
 Um dos principios mencionados pelo Uncle Bob em seu livro, é o <strong>Princípio da dependência</strong>. Esse principipio diz que, algo declarado no circulo exterior não deve ser mencionado no código por um círculo interior. 
-Por exemplo, a camada de domínio não pode depender da camada de infra, mas a camada de infra pode depender na camada de domínio (por que faz o caminho inverso, daí usamos o DIP) <p style="text-align: center;">
+Por exemplo, a camada de domínio não pode depender da camada de infra, mas a camada de infra pode depender na camada de domínio (por que faz o caminho inverso, daí usamos o DIP) <br />
 ![dominio](https://khalilstemmler.com/img/wiki/dependency-rule/the-dependency-rule.svg)
-</p>
+<br />
 
 Mas, qual a necessidade? Sem entrar muito detalhes: Para evitarmos dependências circulares, mantermos o código testável, limpo e sustentável.
 
@@ -18,8 +18,7 @@ Mas agora indo pra parte do código, como o Go facilita isso pra gente?
 
 A ideia de injecão de dependência (DI) vem do fato que nossos componentes (nossas structs em Go) devem receber suas dependências na hora de sua criação
 
-Suponhamos que temos uma struct 
-`Server`, e essa struct requeira uma `Config` para poder ser implementada. Uma maneira a se fazer isso é do seguinte modo:
+Suponhamos que temos uma struct `Server`, e essa struct requeira uma `Config` para poder ser implementada. Uma maneira a se fazer isso é do seguinte modo:
 
 ```go
 type Server struct {
