@@ -18,7 +18,7 @@ Mas agora indo pra parte do código, como o Go facilita isso pra gente?
 
 A ideia de injecão de dependência (DI) vem do fato que nossos componentes (nossas structs em Go) devem receber suas dependências na hora de sua criação
 
-Suponhamos que temos uma struct `Server`, e essa struct requeira uma `Config` para poder ser implementada. Uma maneira a se fazer isso é do seguinte modo:
+Suponhamos que temos uma struct `Server`, e essa struct requeira uma `Config` para poder ser implementada. Uma maneira a se fazer isso é do seguinte modo: <br/><br/>
 
 ```go
 type Server struct {
@@ -32,10 +32,10 @@ func NewServer() *Server {
 }
 
 ```
-
+<br/>
 Deste modo, o constructor de `Server` inicia sua propria config diretamente. E está tudo certo. Nosso caller não precisa saber que o `Server`tem ligação com a `Config`. Tudo escondido do usuário, né?
 
-Bom, não é bem assim. Imagine em um cenário hipotético (muito provável, por sinal), que nos quisessemos trocar o comportamento de nossa `Config`, nos deveriamos fazer a manutenção em todos os cantos que ela está definida. Podemos também querer incrementar nossa função `buildMyConfig`, o que levaria-nos a um efeito dominó de mudanças sem fim, em um cenário mais complexo de uma aplicação real.
+Bom, não é bem assim. Imagine em um cenário hipotético (muito provável, por sinal), que nos quisessemos trocar o comportamento de nossa `Config`, nos deveriamos fazer a manutenção em todos os cantos que ela está definida. Podemos também querer incrementar nossa função `buildMyConfig`, o que levaria-nos a um efeito dominó de mudanças sem fim, em um cenário mais complexo de uma aplicação real.<br/><br/>
 
 Agora, podemos solucionar este problema do seguinte modo:
 
@@ -59,7 +59,7 @@ E no nosso caller, teriamos algo parecido com isso:
         httpServer http.Server = http.NewServer(httpConfig)
     )
 ```
-
+<br/>
 A diferença é perceptível, não? Nosso `Server`agora está desacoplado da nossa `Config`, e não só isso, caso `Config` fosse uma interface, bastariamos passarmos qualquer tipo que implementa essa interface como parâmetro da função `NewServer` que tudo funcionaria normalmente.
 
 Mas, e quais pontos negativos essa abordagem tem? Bom, pe muito trabalhoso criar manualmente a `Config` antes de criarmos o `Server` (pois nesse caso, o `Server` precisa da `Config` para ser iniciado). Numa aplicação real, essas dependências podem cresçer de maneira abrupta e se tornar algo complexo de manter. 
