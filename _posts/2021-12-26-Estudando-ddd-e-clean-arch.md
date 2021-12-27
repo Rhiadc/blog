@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Estudando arquitetura de software com DDD e Clean"
-date:   2021-12-07 13:24:45 -0300
+date:   2021-12-26 13:24:45 -0300
 categories: Go Arquitetura
 ---
 
@@ -146,3 +146,9 @@ bank_service/
 ├─ main.go
 
 ```
+
+Referências:
+- https://medium.com/codex/clean-architecture-for-dummies-df6561d42c94
+- https://www.yiiacademy.com.br/2021/04/11/5-clean-architecture-infra-layer-adapters/
+- https://khalilstemmler.com/articles/software-design-architecture/domain-driven-design-vs-clean-architecture/
+- https://khalilstemmler.com/articles/typescript-domain-driven-design/entities/
