@@ -10,26 +10,26 @@ Ao estudarmos os diferentes tipos de arquiteturas como **Clean Architecture**, *
 Nesse artigo, pretendo esclarecer e estudar conceitos de Clean e Hexagonal, assim como passar a minha visão acerca dessas implementações.
 <br/>
 
-##### Enxergando nossa aplicação como átomo 
+### Enxergando nossa aplicação como átomo 
 É comum vermos a nossa aplicação como um condensado de várias camadas, assim como uma estrutura atômica, onde o domínio é o núcleo, e as demais camadas são os orbitais, veja: <br/>
 <img src="https://images.ctfassets.net/1es3ne0caaid/7cxBEVeTfy8syMeiuoOKK8/068001323f4dfecbf26036eff0b8424c/clean-architecture-ex-3.png" style="display: block; margin: 0 auto;">
 
 
-###### Domain
+### Domain
 Domínio, também conhecido como **Núcleo** ou **Core** é o lugar onde reside toda lógica de negocio e modelo de domínio da nossa aplicação, contendo toda a identidade da mesma. O núcleo deve ser independente de qualquer tecnologia, tipo DB, Frameworks, Aplicações de mensageria, etc. 
 Podemos enxergar o domínio como o "espirito" da nossa aplicação. Ou seja, caso alterassemos o nosso domínio, estariamos alterando diretamente a essência da nossa aplicação. Falaremos sobre o domínio logo mais nesse post.
 
 
-###### Infrastructure
+### Infrastructure
 A camada de insfraestrutura será responsável por acessar serviços externos que o Domínio não tem acesso, como por exemplo, DB, serviços de mensagem, email, etc. Em outras palavras, a camada de Infra representa a tecnologia, e tudo aquilo que não se refere ao domínio da nossa aplicação, determinando assim como o core da aplicação se comunica com o "mundo externo".
 <br/>
 
-##### Estado: Domínio x Infra
+#### Estado: Domínio x Infra
 Consideramos o domínio como núcleo da aplicação pois ele se comporta de maneira estável, isso é, de maneira menos propensa a sofrer modificações e menos sensível às tecnologias. Já a camada de infra apresenta uma volatilidade maior. Como está diretamente ligada às tecnologias, é natural que venha sofrer várias modificações durante o andar do desenvolvimento. Um dos objetivos da arquitetura **domain driven** (ou orientada a Domínio) é proteger e isolar o domínio, fazendo assim com que este não "se importe" com o que não lhe diz respeito.
 <br/>
 
 #### Aprofundando nas camadas
-###### Infra: Adapters
+#### Infra: Adapters
 A camada **Adapter** é uma subcamada de infra. os **adapters** podem ser considerados "tradutores" de comunicação. É nessa camada que convertemos dados nos formatos mais convenitentes, partindo do nosso domínio, com destino "mundo externo". Essa camada deve apenas apresentar *translators*, *parsers*, *formatters*, *handlers*, *validators*, etc. <br/>
 ![adapters](https://miro.medium.com/max/913/1*vPsfoD9O8zxyptYwSHl2Ag.png)
 - A camada de Adapter não deve conter logica relacionada ao negócio.
@@ -62,7 +62,7 @@ Onde a criariamos? A qual entidade tal função deveria pertencer? `Member`? `Po
 E aí que implementamos a nossa camada **Domain Service**, nesse caso, `post_service.go`
 <br/>
 
-###### Use Cases
+#### Use Cases
 É aqui que as coisas começam a complicar um pouco. Tanto no DDD quanto na Clean Architecture está presente como subcamada da camada de aplicação. Mas digamos que ela se relacione ao domínio, como na seguinte figura:
 
 ![use-cases](https://miro.medium.com/max/913/1*hVrM4LymfJQVRC0vtG5Gvg.png)
