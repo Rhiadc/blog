@@ -12,7 +12,7 @@ Nesse artigo, pretendo esclarecer e estudar conceitos de Clean e Hexagonal, assi
 
 ##### Enxergando nossa aplicação como átomo 
 É comum vermos a nossa aplicação como um condensado de várias camadas, assim como uma estrutura atômica, onde o domínio é o núcleo, e as demais camadas são os orbitais, veja: <br/>
-![aplicacao](https://images.ctfassets.net/1es3ne0caaid/7cxBEVeTfy8syMeiuoOKK8/068001323f4dfecbf26036eff0b8424c/clean-architecture-ex-3.png)
+<img src="https://images.ctfassets.net/1es3ne0caaid/7cxBEVeTfy8syMeiuoOKK8/068001323f4dfecbf26036eff0b8424c/clean-architecture-ex-3.png" style="display: block; margin: 0 auto;">
 
 
 ###### Domain
@@ -30,11 +30,11 @@ Consideramos o domínio como núcleo da aplicação pois ele se comporta de mane
 
 #### Aprofundando nas camadas
 ###### Infra: Adapters
-A camada **Adapter** é uma subcamada de infra. os **adapters** podem ser considerados "tradutores" de comunicação. É nessa camada que convertemos dados nos formatos mais convenitentes, partindo do nosso domínio, com destino "mundo externo". Essa camada deve apenas apresentar *translators*, *parsers*, *formatters*, *handlers*, *validators*, etc.
+A camada **Adapter** é uma subcamada de infra. os **adapters** podem ser considerados "tradutores" de comunicação. É nessa camada que convertemos dados nos formatos mais convenitentes, partindo do nosso domínio, com destino "mundo externo". Essa camada deve apenas apresentar *translators*, *parsers*, *formatters*, *handlers*, *validators*, etc. <br/>
 ![adapters](https://miro.medium.com/max/913/1*vPsfoD9O8zxyptYwSHl2Ag.png)
 - A camada de Adapter não deve conter logica relacionada ao negócio.
-- Em alguns casos não será possível construir um adapter totalmente agnostico, embora seja uma boa prática construir um o mais agnostico possível.
-
+- Em alguns casos não será possível construir um adapter totalmente agnostico, embora seja uma boa prática construir um o mais agnostico possível. 
+<br/>
 ###### Domain: Entidades
 A camada de **Entidade** consiste de funções que implementam regras críticas de negócio em mais baixo nível. Essa camada contém logica direcionada a sua menor unidade de domínio, por exemplo: 
 - Accounts
@@ -42,12 +42,13 @@ A camada de **Entidade** consiste de funções que implementam regras críticas 
 - Transactions
 
 É importante lembrar também que as entidades de domínio não tem ligação com entidades de banco, não mantendo nenhum contato com eles.
-
+<br/>
 ###### Domain: services
 Nas camadas do DDD (implementadas em um modelo de arquitetura Onion), a camada de **Domain Service** é uma camada que se liga ao domínio. É uma camada utilizada quando queremos criar uma lógica que depende de mais de 1 entidade do nosso domínio.
 
-![Domain-services-onion](https://miro.medium.com/max/913/0*Ahy_hXrFysq-_j00.png)
+ <img src="https://miro.medium.com/max/913/0*Ahy_hXrFysq-_j00.png" width="300" height="300" style="display: block; margin: 0 auto;">
 
+<br/>
 Criamos essa camada quando o fato de criarmos uma camada de entidade quebraria nosso encapsulamento. 
 
 Por exemplo: 
