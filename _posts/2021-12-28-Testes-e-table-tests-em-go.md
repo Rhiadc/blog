@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Testes e Table Driven Testes em Golang"
+title:  "Testes e Table Driven Testes em Go"
 date:   2021-12-28 13:24:45 -0300
 categories: Go Testes TDD
 ---
 
-Em Go, testes de unidade funcionam como funções Go normais (embora obedeçam algumas regras em específico). Esses são os exemplos de testes tradicionais em Go, que fazem a verificação de valores desejados x redebidos. Por exemplo, tomemos o seguinte arquivo:
+Em Go, testes de unidade funcionam como funções Go normais (embora obedeçam algumas regras em específico). Aqui está um exemplo de um teste padrão em go. Por exemplo, tomemos o seguinte arquivo:
 `example.go`
 
 ```go
