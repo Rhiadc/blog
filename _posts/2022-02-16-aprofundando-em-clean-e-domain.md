@@ -5,7 +5,7 @@ date:   2022-02-16 13:24:45 -0300
 categories: Go Arquitetura
 ---
  <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Mm0JJoP9--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/00zocjrfniog06hsbwnr.jpeg"  height="300" style="display: block; margin: 0 auto;">
-
+<br/>
 ### Motivação
 
 
@@ -28,18 +28,18 @@ Tendo em vista esse ponto, nos resta levantar tal questão: "O que causa todos e
 
 Antes de prosseguir, é interessante termos em mente, de maneira simplificada, como alguns conceitos do SOLID se interligam com o desenvolver da arquitetura.
 
-##### SINGLE RESPONSABILITY PRINCIPLE.
+<b> SINGLE RESPONSABILITY PRINCIPLE. </b>
 De maneira geral, a estrutura do sistema deve ser influenciada pela estrutura social da organização que o utiliza. Isso é, cada modulo de software deve ter uma e apenas uma razão para mudar.
 De acordo com o Uncle Bob, esse é um dos principios menos compreendidos, isso se dá por causa do nome. Esse princípio não significa fazer com que nossos módulos façam apenas uma coisa, mas sim que sejam responsáveis apenas por um ator. Em outras palavras, uma e apenas uma razão para mudar.
 
 Um clássico exemplo:
 A equipe de RH e de Financeiro utiliza um algoritmo em comum, pertencente à função calcualteHours, para realizar coisas distintas. A equipe de RH usa o CalculateHours pra fazer os calculos de pagamento do time, enquanto o time de Financeiro utiliza essa função para realizar calculos de gastos e possíveis otimização. Imagine agora que essa função já não seja mais satisfatória pro time de financeiro, e que ele precise alterar o algoritmo da calculateHours. Agora, o time do RH não consegue mais calcular as horas de maneira adequada a sua responsabilidade. o SRP diz para separarmos esses codigos, isolando-os assim da responsabilidade um do outro.
 
-##### OPEN CLOSED PRINCIPLE
+<b> OPEN CLOSED PRINCIPLE </b>
 Para que os sistemas de software sejam fáceis de mudas, eles devem ser projetados de modo a permitir que o comportamento desse sistema mude pela adição de novo código, e não pela alteração de um já existente
 
 
-##### DEPENDENCY INVERSION PRINCIPLE
+<b> DEPENDENCY INVERSION PRINCIPLE </b>
 O código que implementa uma política de alto nível não deve depender do código que implementa detalhes de nível mais baixo. Em outras palavras, detalhes devem depender de políticas.
 Arquitetura de software estáveis são aquelas que evitam depender de implementação concreta, e que favorecem o uso de interfaces abstratas estáveis.
 
@@ -50,7 +50,9 @@ OBS: nem todo componente deve ser estável.
 nesse caso: 
 - <b>Estável</b>: responsabilidade e independencia (Entidade)
 - <b>Instável</b>: irresponsabilidade e dependencia (Banco)
+
 <br/>
+
 ### Arquitetura
 
 A arquitetura de um sistema pouco tem a ver com a relevância para o seu funcionamento. Existem muito sistemas por ai que funcionam bem, embora tenham uma terrível arquitetura. Os problemas não estão exatamente na operação, eles ocorrem sempre na implementação, manutenção e desenvolvimento continuado.
@@ -62,6 +64,7 @@ A arquitetura também deve ditar as necessidades operacionais do sistema.
 <img src="https://archtrends.com/blog/wp-content/uploads/2012/06/tito-ficarelli-casa-10-604x590.jpg" height="350" style="display: block; margin: 0 auto;">
 
 Ao olharmos à planta de uma casa, é fácil enxergarmos uma janela, uma porta, determinado cômodo. Ou até mesmoque tipo de planta é aquela. Uma arquitetura de software deve seguir os mesmos padrões. Devemos olhar para a aplicação e enxergarmos do que ela se trata, o que ela faz, e quais são suas responsabilidades. Para isso, devemos focar o software em dois elementos centrais.
+
 <br/>
 
 ### Políticas e detalhes.
@@ -73,6 +76,7 @@ Os detalhes são os itens que fornecem o meio de comunicação entre outros sist
 É importante salientar também que, geralmente priorizamos as políticas no começo do planejamento arquitetural. Nos focamos nas resoluções de negocio. Não é necessário escolher um sistema de banco de dados no início do planejamento, nem o servidor web, adotar REST, microsserviços, SOA e etc. Essas são decisões que virão com facilidade quando a ideia da política estiver bem definida. A ideia aqui é adiar decisões sobre detalhes a fim de ter um leque de informações maior, no propósito de facilitar o escolhimento desses detalhes.
 
 Uncle Bob diz que uma boa arquitetura deve possibilitar que um sistema nasça como monolito, seja implementado em um único arquivo e então cresça como um conjundo de unidades independentes implementáveis, incluindo serviços independentes e microsserviços.
+
 <br/>
 
 ### Arquiteturas domain Driven - Clean
@@ -90,12 +94,14 @@ Nas ultimas décadas, pudemos observar o estudo acerca de algumas arquiteturas n
 <img src="https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg" height="350" style="display: block; margin: 0 auto;">
 
 Os circulos mais externos são mecanismos, detalhes. Os mais internos são s políticas. As dependências do codigo fonte dedvem apontar apenas para dentro na diração das políticas de nível mais alto. Um exelemto de um circulo interno não podem saber nada sobre os elementos de um circulo externo. Em outras palavras, o nome de um elemento declarado em um circulo externo não deve ser mencionado por um circulo interno (ex: não podemos chamar um banco ou usecase na nossa entidade)
+
 <br/>
 
 ### Entidades
 As entidades são a essência da nossa aplicação. São os componentes cruciais relacionados às regras de negocio da empresa. Uma entidade pode ser um objeto, pode conter conjunto de métodos, especificações. A entidade contem o menor nível de fragmentação, e também possui forte nível de estabilidade. Nenhuma mudança operacional na aplicação deve influenciar na entidade. Fazendo um paralelo com o DDD:
 
 <img src="https://miro.medium.com/max/732/1*P4zm6LF9l0nRmyN2iqjgHQ.png" height="350" style="display: block; margin: 0 auto;">
+
 <br/>
 
 Podemos relacionar a entidade como menor componente do Domain. É dentro do Domain que podemos ter a separação de componentes referentes às entidades. Também podemos comparar o Domain como o núcleo de um átomo. Isso porquê é estável, e muito menos propenso à modificações.
@@ -104,6 +110,7 @@ Podemos relacionar a entidade como menor componente do Domain. É dentro do Doma
 
 Podemos ter outros elementos no nosso domínio, como value objects, (email, point), enums (tipoPagto). Assim, podemos dizer que temos todos os conceitos do negócio (política) mapeadas no nosso domínio
 **obs: entidades de domínio não tem relacionamento com entidades de banco.
+
 <br/>
 
 ### Usecases
