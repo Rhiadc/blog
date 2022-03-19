@@ -137,7 +137,7 @@ Podemos enxergar os adapters como translators. Eles são feitos para serem camad
 O que sobra na parte de infra é tudo que não vai na camada de adapters. Frameworks MVC, Web Frameworks, qualquer outro mecanismo que sirva como ponto para o mundo externo
 
 ### Gateways  
-##### Como fica a comunicação entre usecases/services e o Repo? Interfaces
+#### Como fica a comunicação entre usecases/services e o Repo? Interfaces
 lamos que uma camada interna não pode depender de uma mais externa, certo? Devemos sempre obedecer o DIP do SOLID. Mas, e nos casos dos usecases, eles não estão dependendo dos nossos adapters? Como podemos lidar com isso?
 
 Isso depende da linguagem, mas em Golang, podemos Definir uma interface e injetar implementações concretas. Trabalhando com injeções de dependência. Nesse caso, temos uma definição clara da comunicação com um adapter. Essa divisa de comunicação externa também é conhecido como PORT. Em termos práticos, temos uma interface. Dado que as portas abstraem adapters (que pertencem à infra), elas pertencem ao domínio.
