@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Estudando arquitetura de software com DDD e Clean"
+title:  "Estudando arquitetura de software com DDD e Clean em Go"
 date:   2021-12-26 13:24:45 -0300
 categories: Go Arquitetura
 ---
@@ -87,7 +87,7 @@ Ou seja, a camada de Use case é responsável por funcionar como intermediária 
 ### Portas e adaptadores
 De acordo com o princípio da inversão da dependência (o DIP no SOLID), camadas mais internas não devem depender das camadas mais externas da arquitetura.
 Em outras palavras, nosso **domínio** não pode depender de qualquer **adapter**, etc. Entretanto, nossa camada de **Use case** se comunica com a de banco, entre outros adaptadores mais externos. 
-Para resolver esse problema, definimos uma **interface** e injetamos implementações concretas. Chamamos essa resolução de **Portas**. As portas são as responsáveis por fazer a intermediação entre comunicadores externos e fornecendo os dados demandados pelo domínio.
+Para resolver esse problema, definimos uma **interface** e injetamos implementações concretas em nossos `Use Cases`. Chamamos essa resolução de **Portas**. As portas são as responsáveis por fazer a intermediação entre comunicadores externos e fornecer os dados demandados pelo domínio.
 
 Exemplo de interface:
 ```go
