@@ -7,7 +7,8 @@ categories: Go concorrência
 
 Um contexto Go é uma ferramenta usada para compartilhamento de dados que dividem um mesmo escopo, `cancellation` e `timeout` quando trabalhamos com padrões de programação concorrente em Go.
 
-Como descrito no overview do package, o context define um type, carrega deadlines e trabalha com cancellation signals, assim como outros valores entre limites de APIs e processos. 
+Como descrito no overview do package:
+> Package context defines the Context type, which carries deadlines, cancellation signals, and other request-scoped values across API boundaries and between processes. 
 
 Ao analisarmos o package, podemos observar que o tipo Context obedece o seguinte contrato:
 ```go
@@ -28,18 +29,18 @@ Onde:
 - <b>Dealine()</b>: retorna o tempo em que esse contexto será cancelado, se a ordem de cancelamento existir.
 - <b>Done()</b>: retorna o channel que é fechado quando o contexto é cancelado ou é expirado.
 - <b>Err()</b>: retorna a razão pelo qual um contexto foi cancelado, depois que `Done()` for fechado
-- <b>Value</b>: armazena data, basicamente trabalhando como um ke-value.
+- <b>Value</b>: armazena data, basicamente trabalhando como um key-value.
 
-Existem algums jeitos específicos de se trabalhar com contextos. Podemos propagar um contexto específico ou criar um contexto filho a partir de um específico, passando um `WithDeadline`, `WithCancel`, `WithTimeout` ou `WithValue`. Sempre que criamos um contexto filho, recebemos um novo contexto baseado no contexto oroginal. Assim, caso um contexto pai seja cancelado, todos os contextos filhos também serão cancelados. Os contextos podem ser passados para diferentes gorotinas.
+Existem alguns jeitos específicos de se trabalhar com contextos. Podemos propagar um contexto específico ou criar um contexto filho a partir de um específico, passando um `WithDeadline`, `WithCancel`, `WithTimeout` ou `WithValue`. Sempre que criamos um contexto filho, recebemos um novo contexto baseado no contexto original. Assim, caso um contexto pai seja cancelado, todos os contextos filhos também serão cancelados. Os contextos podem ser passados para diferentes gorotinas.
 
-Existem algumas regras específicas para a utilização de contextos, delimitados pela propria documentação. Sendo elas:
+Também existem algumas regras específicas para a utilização de contextos, delimitados pela propria documentação. Sendo elas:
 - Não usar contextos como componentes de uma struct. Ao invés disso, passar um contexto diretamente a uma função que necessite. O contexto deve ser passado como primeiro parâmetro dessa função, convencionalmente chamada de `ctx`
 - Não usar contextos nil, mesmo que isso seja possível. Nesse caso, o mais correto será utilizar um `context.TODO`
 - Usar valores de contextos apenas para dados de escopo de requisição que transitam entre processos e APIs.
 
 
 #### Partindo agora para alguns exemplos.
-Contextos com timeout são usados em sua maioria quando trabalhamos com algume requisição externa, seja uma query num banco de dados, ou alguma comunicação como HTTP, gRPC, etc.
+Contextos com timeout são usados em sua maioria quando trabalhamos com alguma requisição externa, seja uma query num banco de dados, ou alguma comunicação como HTTP, gRPC, etc.
 
 ```go
 package main
@@ -192,3 +193,10 @@ Explicando o código:
 - Também criamos a função doAnotherThing, que fará 8 iterações, esperando 1 segunda para cada iteração. A cada iteração, estamos verificando o signal a cada iteração.
 
 Nesse cenário, como cancelamos o contexto após 5 segundos, a função `doSomething` teve tempo de acabar, mas a `doAnotherThing` não. Caso cancelassemos o context após 1 segundo, nenhuma das duas funções seria finalizada. Caso cancelássemos com 10 segundos, as duas seriam finalizadas.
+
+
+### Fontes
+- https://go.dev/blog/context
+- https://pkg.go.dev/context#Context
+- https://tutorialedge.net/golang/go-context-tutorial/
+- https://www.linkedin.com/pulse/its-time-understand-golang-contexts-lucas-schenkel-schieferdecker/
