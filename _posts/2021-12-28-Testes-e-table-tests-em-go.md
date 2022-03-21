@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Testes e Testes Table Driven em Go"
+title:  "Go: Testes e Testes Table Driven"
 date:   2021-12-28 13:24:45 -0300
 categories: Go Testes TDD
 ---

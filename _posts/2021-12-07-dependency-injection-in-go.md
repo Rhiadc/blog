@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Injeção de dependência em Go"
+title:  "Go: Injeção de dependência"
 date:   2021-12-07 13:24:45 -0300
 categories: Go Golang
 ---
