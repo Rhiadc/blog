@@ -33,7 +33,7 @@ De maneira geral, a estrutura do sistema deve ser influenciada pela estrutura so
 De acordo com o Uncle Bob, esse é um dos principios menos compreendidos, isso se dá por causa do nome. Esse princípio não significa fazer com que nossos módulos façam apenas uma coisa, mas sim que sejam responsáveis apenas por um ator. Em outras palavras, uma e apenas uma razão para mudar.
 
 Um clássico exemplo:
-A equipe de RH e de Financeiro utiliza um algoritmo em comum, pertencente à função calcualteHours, para realizar coisas distintas. A equipe de RH usa o CalculateHours pra fazer os calculos de pagamento do time, enquanto o time de Financeiro utiliza essa função para realizar calculos de gastos e possíveis otimização. Imagine agora que essa função já não seja mais satisfatória pro time de financeiro, e que ele precise alterar o algoritmo da calculateHours. Agora, o time do RH não consegue mais calcular as horas de maneira adequada a sua responsabilidade. o SRP diz para separarmos esses codigos, isolando-os assim da responsabilidade um do outro.
+A equipe de RH e de Financeiro utiliza um algoritmo em comum, pertencente à função calculateHours para realizar coisas distintas. A equipe de RH usa o CalculateHours pra fazer os cálculos de pagamento do time, enquanto o time de financeiro utiliza essa função para realizar cálculos de gastos e possíveis otimização. Imagine agora que essa função já não seja mais satisfatória pro time de financeiro, e que ele precise alterar o algoritmo da calculateHours. Agora, o time do RH não consegue mais calcular as horas de maneira adequada a sua responsabilidade. o SRP diz para separarmos esses codigos, isolando-os assim da responsabilidade um do outro.
 
 <b> OPEN CLOSED PRINCIPLE </b>
 Para que os sistemas de software sejam fáceis de mudas, eles devem ser projetados de modo a permitir que o comportamento desse sistema mude pela adição de novo código, e não pela alteração de um já existente
@@ -57,23 +57,23 @@ nesse caso:
 
 A arquitetura de um sistema pouco tem a ver com a relevância para o seu funcionamento. Existem muito sistemas por ai que funcionam bem, embora tenham uma terrível arquitetura. Os problemas não estão exatamente na operação, eles ocorrem sempre na implementação, manutenção e desenvolvimento continuado.
 
-O propósito principal da arquitetura é suportar ciclo de vida do sistema, Uma boa arquitetura torna o sistema fácil de entender, fácil de desenvolver, fácil de manter e fácil de implementar. Uma sistema de software dificil de desenvolver provavelmente não terá uma vida útil longa e sustentável. Nesse caso, quanto maior o custo de implementação, menos útil o sistema. Isso resulta em sistemas fáceis de desenvolver, mas difíceis de se implementar.
+O propósito principal da arquitetura é suportar ciclo de vida do sistema, Uma boa arquitetura torna o sistema fácil de entender, fácil de desenvolver, fácil de manter e fácil de implementar. Uma sistema de software difícil de desenvolver provavelmente não terá uma vida útil longa e sustentável. Nesse caso, quanto maior o custo de implementação, menos útil o sistema. Isso resulta em sistemas fáceis de desenvolver, mas difíceis de se implementar.
 
 A arquitetura também deve ditar as necessidades operacionais do sistema.
 <br/>
 <img src="https://archtrends.com/blog/wp-content/uploads/2012/06/tito-ficarelli-casa-10-604x590.jpg" height="350" style="display: block; margin: 0 auto;">
 
-Ao olharmos à planta de uma casa, é fácil enxergarmos uma janela, uma porta, determinado cômodo. Ou até mesmoque tipo de planta é aquela. Uma arquitetura de software deve seguir os mesmos padrões. Devemos olhar para a aplicação e enxergarmos do que ela se trata, o que ela faz, e quais são suas responsabilidades. Para isso, devemos focar o software em dois elementos centrais.
+Ao olharmos a planta de uma casa, é fácil enxergarmos uma janela, uma porta, determinado cômodo. Ou até mesmo que tipo de planta é aquela. Uma arquitetura de software deve seguir os mesmos padrões. Devemos olhar para a aplicação e enxergarmos do que ela se trata, o que ela faz, e quais são suas responsabilidades. Para isso, devemos focar o software em dois elementos centrais.
 
 <br/>
 
 ### Políticas e detalhes.
 
-As políticas são as regras de negocio. É a partir das políticas que conseguimos identificar como nosso sofware vai se comportar, e o porquê. É na política que reside toda a alma do sistema.
+As políticas são as regras de negócio. É a partir das políticas que conseguimos identificar como nosso sofware vai se comportar, e o porquê. É na política que reside toda a alma do sistema.
 
 Os detalhes são os itens que fornecem o meio de comunicação entre outros sistemas, usuários e outros programadores com a política.
 
-É importante salientar também que, geralmente priorizamos as políticas no começo do planejamento arquitetural. Nos focamos nas resoluções de negocio. Não é necessário escolher um sistema de banco de dados no início do planejamento, nem o servidor web, adotar REST, microsserviços, SOA e etc. Essas são decisões que virão com facilidade quando a ideia da política estiver bem definida. A ideia aqui é adiar decisões sobre detalhes a fim de ter um leque de informações maior, no propósito de facilitar o escolhimento desses detalhes.
+É importante salientar também que, geralmente priorizamos as políticas no começo do planejamento arquitetural. Nos focamos nas resoluções de negócio. Não é necessário escolher um sistema de banco de dados no início do planejamento, nem o servidor web, adotar REST, microsserviços, SOA e etc. Essas são decisões que virão com facilidade quando a ideia da política estiver bem definida. A ideia aqui é adiar decisões sobre detalhes a fim de ter um leque de informações maior, no propósito de facilitar o escolhimento desses detalhes.
 
 Uncle Bob diz que uma boa arquitetura deve possibilitar que um sistema nasça como monolito, seja implementado em um único arquivo e então cresça como um conjundo de unidades independentes implementáveis, incluindo serviços independentes e microsserviços.
 
@@ -87,13 +87,13 @@ Nas ultimas décadas, pudemos observar o estudo acerca de algumas arquiteturas n
 É padrão observarmos nessas arquiteturas:
 - <b> Independência de framework</b>: não adaptamos nosso sistema às restrições do framework, o framework é uma ferramenta.
 - <b>Testabilidade</b>: regras de negocio não necessitam de UI, banco, servidor ou qualquer outro elemento pra ser testado.
-- <b>Independencia da UI</b>: A ui não deve importar na hora de desenvolvermos nossos sistema, podemos ter uma aplicação console ou web sem alterar nossas regras.
-- <b>Independencia de banco</b>: Devemos poder trocar Posgres por Mongo ou qualquer outra coisa, desde que satisfaça nossa especificação.
-- <b>Independencia de agente externo</b>: Nossas regras de negocio não devem saber nada sobre interfaces do mundo externo.
+- <b>Independência da UI</b>: A ui não deve importar na hora de desenvolvermos nossos sistema, podemos ter uma aplicação console ou web sem alterar nossas regras.
+- <b>Independência de banco</b>: Devemos poder trocar Posgres por Mongo ou qualquer outra coisa, desde que satisfaça nossa especificação.
+- <b>Independência de agente externo</b>: Nossas regras de negocio não devem saber nada sobre interfaces do mundo externo.
 
 <img src="https://blog.cleancoder.com/uncle-bob/images/2012-08-13-the-clean-architecture/CleanArchitecture.jpg" height="350" style="display: block; margin: 0 auto;">
 
-Os circulos mais externos são mecanismos, detalhes. Os mais internos são s políticas. As dependências do codigo fonte dedvem apontar apenas para dentro na diração das políticas de nível mais alto. Um exelemto de um circulo interno não podem saber nada sobre os elementos de um circulo externo. Em outras palavras, o nome de um elemento declarado em um circulo externo não deve ser mencionado por um circulo interno (ex: não podemos chamar um banco ou usecase na nossa entidade)
+Os circulos mais externos são mecanismos, detalhes. Os mais internos são as políticas. As dependências do codigo fonte devem apontar apenas para dentro na diração das políticas de nível mais alto. Um elemento de um circulo interno não podem saber nada sobre os elementos de um circulo externo. Em outras palavras, o nome de um elemento declarado em um circulo externo não deve ser mencionado por um circulo interno (ex: não podemos chamar um banco ou usecase na nossa entidade)
 
 <br/>
 
@@ -131,14 +131,14 @@ As mudanças nos usecases não devem alterar comportamento das entidades, mas a 
 Fazendo a referência à clean, a parte de infra está presente depois da camada de usecases. A camada de infra representa toda nossa tecnologia. Tudo aquilo que não se relaciona às regras de negocio, às políticas. Aqui é a camada que criamos para mantermos comunicação com o mundo externo. Temo aqui a especificação de como é entregue (Apis, CLI, GUI), e como é feita a comunicação com terceiros (databases, filas, APIs, etc). Assim como outras configs. Em outras palavras, aqui é tudo que se relaciona com os detalhes,
 
 ### Adapters
-Podemos considerar uma subcamada dentro de infra, são os adapters. Os adapters são onde definimos como nosso app vai interarir com o mundo,. Exemplos comuns podem ser APIS, gateways, endpoints RESt, handlers de message brokers, repo de databases, controllers, email services, entre outros
+Podemos considerar uma subcamada dentro de infra, são os adapters. Os adapters são onde definimos como nosso app vai interagir com o mundo,. Exemplos comuns podem ser APIS, gateways, endpoints REST, handlers de message brokers, repo de databases, controllers, email services, entre outros
 Podemos enxergar os adapters como translators. Eles são feitos para serem camadas "finas", contendo conversão de data (parsing, formatting, strigfication), handlers, validações de regras sintáticas e etc. Mais uma vez, não devemos colocar lógica de domínio na nossa camada de adapters
 
 O que sobra na parte de infra é tudo que não vai na camada de adapters. Frameworks MVC, Web Frameworks, qualquer outro mecanismo que sirva como ponto para o mundo externo
 
 ### Gateways  
 #### Como fica a comunicação entre usecases/services e o Repo? Interfaces
-lamos que uma camada interna não pode depender de uma mais externa, certo? Devemos sempre obedecer o DIP do SOLID. Mas, e nos casos dos usecases, eles não estão dependendo dos nossos adapters? Como podemos lidar com isso?
+Falamos que uma camada interna não pode depender de uma mais externa, certo? Devemos sempre obedecer o DIP do SOLID. Mas, e nos casos dos usecases, eles não estão dependendo dos nossos adapters? Como podemos lidar com isso?
 
 Isso depende da linguagem, mas em Golang, podemos Definir uma interface e injetar implementações concretas. Trabalhando com injeções de dependência. Nesse caso, temos uma definição clara da comunicação com um adapter. Essa divisa de comunicação externa também é conhecido como PORT. Em termos práticos, temos uma interface. Dado que as portas abstraem adapters (que pertencem à infra), elas pertencem ao domínio.
 Podemos fazer um paralelo com a arquitetura hexagonal aqui (também conhecida como ports and adapters).  Em um exemplo concreto, uma porta pode ser uma interface de service ou uma interface de um repositorio que um controller, ou até mesmo o service requer. Injetamos essa dependencia no construtor de onde queremos acessar tal implementação. Nessa arquitetura, nossos adapters dependem de uma ferramenta específica e uma porta específica, porém nossas regras de negocio só vão depender da nossa interface, feita para satisfazer nossas necessidades de negócio. 
